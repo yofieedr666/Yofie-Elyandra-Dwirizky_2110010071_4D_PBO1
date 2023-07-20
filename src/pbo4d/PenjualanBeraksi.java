@@ -6,11 +6,13 @@ import java.util.Scanner;
 public class PenjualanBeraksi {
 
     // Daftar harga laptop disini juga terdapat array
+    private static final String[] merkLaptop = {"Asus", "Acer", "HP"};
     private static final int[] daftarHargaLaptop = {5000000, 4500000, 5500000}; // Asus, Acer, HP
 
     public static void main(String[] args) {
         // Atribut
-        int hargaLaptop = daftarHargaLaptop[0]; // Harga laptop saat ini
+        String merkTerpilih;
+        int hargaLaptop = 0; // Harga laptop saat ini
         String jawab;
 
         // Error handling
@@ -21,9 +23,30 @@ public class PenjualanBeraksi {
             // ArrayList untuk menyimpan data penjualan
             ArrayList<PenjualanLaptop> penjualanList = new ArrayList<>();
 
+            // Menampilkan daftar merk laptop dan harganya
+            System.out.println("===== Daftar Harga Laptop =====");
+            for (int i = 0; i < merkLaptop.length; i++) {
+                System.out.println((i + 1) + ". " + merkLaptop[i] + " - Rp" + daftarHargaLaptop[i]);
+            }
+            System.out.println("===============================");
+
+            // Meminta input merk laptop yang ingin dibeli
+            System.out.print("Pilih merk laptop [1-3]: ");
+            int pilihanMerk = Integer.parseInt(scanner.nextLine());
+
+            // Validasi input merk laptop
+            if (pilihanMerk < 1 || pilihanMerk > merkLaptop.length) {
+                System.out.println("Merk laptop tidak valid!");
+                return;
+            } else {
+                merkTerpilih = merkLaptop[pilihanMerk - 1];
+                hargaLaptop = daftarHargaLaptop[pilihanMerk - 1];
+            }
+
             // Perulangan while
             while (true) {
                 System.out.println("===== Penjualan Laptop =====");
+                System.out.println("Merk Laptop: " + merkTerpilih);
                 System.out.println("Harga Laptop: Rp" + hargaLaptop);
                 System.out.println("============================");
                 System.out.print("ID Pelanggan: ");
@@ -36,7 +59,7 @@ public class PenjualanBeraksi {
                 int totalHarga = hargaLaptop * jumlahLaptop;
 
                 // Membuat objek PenjualanLaptop dan menambahkan ke dalam ArrayList
-                PenjualanLaptop penjualan = new PenjualanLaptop(id, namaPelanggan, "Laptop Gaming", hargaLaptop, jumlahLaptop);
+                PenjualanLaptop penjualan = new PenjualanLaptop(id, namaPelanggan, merkTerpilih, hargaLaptop, jumlahLaptop);
                 penjualanList.add(penjualan);
 
                 System.out.println(penjualan.displayInfo());
