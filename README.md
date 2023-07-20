@@ -32,13 +32,25 @@ Berikut adalah penjelasan singkat mengenai konsep OOP yang diimplementasikan dal
 
 10. **Seleksi** adalah statement kontrol yang digunakan untuk membuat keputusan berdasarkan kondisi. Pada kode ini, digunakan seleksi `if else` dalam `PenjualanLaptop` dan seleksi `while` dan `if` dalam `PenjualanBeraksi`.
 
-11. **Perulangan** adalah statement kontrol yang digunakan untuk menjalankan blok kode berulang kali. Pada kode ini, digunakan loop `while` untuk meminta input dan menampilkan data.
+11. **Perulangan** adalah statement kontrol yang digunakan untuk menjalankan blok kode berulang kali. Pada kode ini, digunakan loop `while` untuk meminta input dan menampilkan data.contohnya while (true) {
+                System.out.println("===== Penjualan Laptop =====");
+                System.out.println("Merk Laptop: " + merkTerpilih);
+                System.out.println("Harga Laptop: Rp" + hargaLaptop);
+                System.out.println("============================");
+                System.out.print("ID Pelanggan: ");
+                String id = scanner.nextLine();
+                System.out.print("Nama Pelanggan: ");
+                String namaPelanggan = scanner.nextLine();
+                System.out.print("Jumlah Laptop yang dibeli: ");
+                int jumlahLaptop = Integer.parseInt(scanner.nextLine());
 
-12. **IO Sederhana** digunakan untuk menerima input dari user dan menampilkan output ke user. Pada kode ini, digunakan class `Scanner` untuk menerima input dan method `System.out.println` untuk menampilkan output.
+                int totalHarga = hargaLaptop * jumlahLaptop;
 
-13. **Array** adalah struktur data yang digunakan untuk menyimpan beberapa nilai dalam satu variabel. Pada kode ini, `PenjualanDetail[] penjualanArr = new PenjualanDetail[5];` adalah contoh penggunaan array.
+13. **IO Sederhana** digunakan untuk menerima input dari user dan menampilkan output ke user. Pada kode ini, digunakan class `Scanner` untuk menerima input dan method `System.out.println` untuk menampilkan output.
 
-14. **Error Handling** digunakan untuk menangani error yang mungkin terjadi saat runtime. Pada kode ini, digunakan `try catch` untuk menangani error dalam `PenjualanBeraksi`.
+14. **Array** adalah struktur data yang digunakan untuk menyimpan beberapa nilai dalam satu variabel. Pada kode ini, `PenjualanDetail[] penjualanArr = new PenjualanDetail[5];` adalah contoh penggunaan array.
+
+15. **Error Handling** digunakan untuk menangani error yang mungkin terjadi saat runtime. Pada kode ini, digunakan `try catch` untuk menangani error dalam `PenjualanBeraksi`.
 
 ## Usulan nilai
 
